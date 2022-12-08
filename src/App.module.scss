@@ -7,7 +7,6 @@ $border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
   height: 100vh;
   width: 100vw;
@@ -47,12 +46,12 @@ $border-radius: 5px;
 }
 
 .container{
-  height: 99%;
   width: 99%;
   display: flex;
   align-items: flex-start;
   gap: 20px;
   overflow: auto;
+  flex-wrap: wrap;
 
   &__block{
     min-height: 300px;

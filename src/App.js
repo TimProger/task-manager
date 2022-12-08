@@ -56,9 +56,9 @@ function App() {
   }
 
   const removeBlock = (block_id) => {
-    const block = blocks.find((el)=>el.id === block_id)
-    if(block){
-      const index = blocks.indexOf(block)
+    const block = blocks.filter((el)=>el.id === block_id)
+    if(block[0]){
+      const index = blocks.indexOf(block[0])
       blocks.splice(index, 1)
       setBlocks([...blocks])
     }
