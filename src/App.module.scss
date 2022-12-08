@@ -1,0 +1,165 @@
+$color-text-main: #d2cfcf;
+$color-block-main: rgba(19, 20, 44, 0.30);
+$color-block-main-hover: rgba(19, 20, 44, 0.50);
+$border-radius: 5px;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(90,86,164);
+  background: linear-gradient(153deg, rgba(90,86,164,1) 0%, rgba(168,106,97,1) 35%, rgba(140,81,167,1) 81%, rgba(81,43,105,1) 100%);
+  color: $color-text-main;
+}
+
+.header{
+  width: 100%;
+  height: 50px;
+  background: #00000070;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__btns{
+    height: 100%;
+    display: flex;
+    gap: 20px;
+
+    &__btn{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: $color-block-main;
+      backdrop-filter: blur(50px);
+
+      &:hover{
+        cursor: pointer;
+        background: $color-block-main-hover;
+      }
+    }
+  }
+}
+
+.container{
+  height: 99%;
+  width: 99%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  overflow: auto;
+
+  &__block{
+    min-height: 300px;
+    height: auto;
+    width: 300px;
+    background: #00000070;
+    backdrop-filter: blur(50px);
+    border-radius: $border-radius;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    &__over{
+      background: $color-block-main-hover !important;
+    }
+
+    &__header{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      & input{
+        width: 100%;
+        height: 20px;
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $color-block-main;
+        color: $color-text-main;
+
+        &::placeholder{
+          color: #9d9d9d;
+        }
+      }
+
+      & p{
+        padding: 5px;
+
+        &:hover{
+          cursor: pointer;
+          color: red;
+        }
+      }
+    }
+
+    &__tasks{
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+      margin-top: 20px;
+
+      &__add{
+        padding: 5px;
+
+        &:hover{
+          cursor: pointer;
+          color: #55e555;
+        }
+      }
+
+      &__task{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        & div{
+          padding: 2px;
+          position: absolute;
+
+          &:hover{
+            cursor: pointer;
+            color: red;
+          }
+        }
+
+        & textarea{
+          padding: 2px;
+          width: 100%;
+          height: 100px;
+          resize: none;
+          outline: none;
+          border: none;
+          background: $color-block-main;
+          border-radius: $border-radius;
+          color: $color-text-main;
+          font-size: 14px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+          cursor: text;
+        }
+
+        & p{
+          padding: 2px;
+          width: 100%;
+          min-height: 100px;
+          background: $color-block-main;
+          border-radius: $border-radius;
+          font-size: 14px;
+          cursor: pointer;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}
