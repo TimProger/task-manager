@@ -18,13 +18,7 @@ function App() {
     const obj = {
       id: blocks.length > 0 ? blocks[blocks.length-1].id + 1 : 0,
       name: "",
-      tasks: [
-        {
-          id: 0,
-          edit: false,
-          name: 'task'
-        }
-      ]
+      tasks: []
     }
     _Storage.set('blocks', JSON.stringify([...blocks, obj]))
     setBlocks(prev => [...prev, obj])
