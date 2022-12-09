@@ -60,6 +60,7 @@ function App() {
     if(block[0]){
       const index = blocks.indexOf(block[0])
       blocks.splice(index, 1)
+      _Storage.set('blocks', JSON.stringify([...blocks]))
       setBlocks([...blocks])
     }
   }
